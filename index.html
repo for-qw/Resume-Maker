@@ -10,7 +10,7 @@
 
   <!-- <script type="text/javascript" src="scripts/jquery.slicknav.js"></script> -->
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="templet.css" />
 
   <title>Hello, World!</title>
@@ -21,6 +21,7 @@
 
 <body>
   <div class="form">
+    <h1 align="center">Resume Maker</h1>
     <form>
       <section class="section">
         <div class="container pad">
@@ -89,49 +90,56 @@
       </section>
 
       <section class="section">
-        <div class="container">
+        <div class="container" id="qualification">
           <h1 class="h1">Qualification</h1>
 
-          <div id="qualification" class="container2">
-            <input required type="text" id="qualificationInput" placeholder="Qualification*">
+          <div class="container2">
+            <input required type="text" class="newQualificationInput" id="qualificationInput"
+              placeholder="Qualification*">
 
-            <input required type="text" id="uniInput" placeholder="University / Board *">
+            <input required type="text" class="newBoardInput" id="uniInput" placeholder="University / Board *">
 
-            <input required type="number" id="yearInput" placeholder="Year *">
+            <input required type="number" class="newYearInput" id="yearInput" placeholder="Year *">
 
-            <input required type="number" id="perInput" placeholder="Per % *">
+            <input required type="number" class="newPerInput" id="perInput" placeholder="Per % *">
 
-            <!-- <button class="remove" type="button">Remove</button> -->
+            <button class="remove" type="button">Remove</button>
           </div>
 
-          <!-- <button class="add" type="button">Add more</button> -->
+          <button class="add addQualification" type="button">Add more</button>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
-          <h1 class="h1" class="required">Other Qualification </h1>
-          <div class="sidebtn">
-            <input required class="side" id="otherQualiInput1" type="text" placeholder="Basic Computer,Telly *">
-            <!-- <span class="side-btn">X</span> -->
+          <h1 class="h1" class="required">Other Qualification <!--<span class="side-btn remove">X</span>--></h1>
+          <div id="otherMain">
+
+            <div class="sidebtn">
+              <input required class="side" id="otherQualiInput" type="text" placeholder="Basic Computer,Telly *">
+              <span class="side-btn remove">X</span>
+            </div>
           </div>
           <!-- <button class="remove" type="button">Remove</button> -->
 
-          <!-- <button class="add" type="button">Add point</button> -->
+          <button class="add addPoint" type="button">Add point</button>
         </div>
       </section>
 
       </section>
       <section class="section">
-        <div class="container">
-          <h1 class="h1">Work Experience</h1>
-          <div class="sidebtn">
-            <input required class="side" id="workExInput" type="text" placeholder="Company Name Or Fresher *">
-            <!-- <span class="side-btn">X</span> -->
+        <div id="workEx" class="container">
+          <h1 class="h1">Work Experience <!--<span class="side-btn remove">X</span>--></h1>
+          <div id="workMain">
+            <div class="sidebtn workEx">
+              <input required class="side" id="workExInput" type="text"
+                placeholder="Company Name and Years Or Fresher *">
+              <span class="side-btn remove">X</span>
+            </div>
           </div>
           <!-- <button class="remove" type="button">Remove</button> -->
 
-          <!-- <button class="add" type="button">Add point</button> -->
+          <button class="add addPoint" type="button">Add point</button>
         </div>
       </section>
 
@@ -187,9 +195,9 @@
 
 
   <!-- Tamplate -->
-  <div style="position: absolute;top: 200px;left: -1000px;">
+  <div id="templateContainer" style="position: absolute;top: 200px;left: -1000px;">
     <div id="template">
-      <h1>RESUME</h1>
+      <h1 >RESUME</h1>
       <section id="section1">
         <div id="header">
           <div id="content">
@@ -211,25 +219,256 @@
 
       <section class="sec">
         <h3>ACADEMIC QUALIFICATION</h3>
-        <div class="table">
+        <div class="table" class="border">
           <div>
-            <div>
+            <div class="border">
               <h4>S.No</h4>
             </div>
             <div id="indexNoDiv1">
-              <p>1</p>
+
             </div>
           </div>
-          <div>
-            <div>
-              <h4>Qualification</h4>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <!-- <link rel="stylesheet" href="styles/slicknav.css"> -->
+  <!-- <script type="text/javascript" src="scripts/jquery.js"></script> -->
+
+  <!-- <script type="text/javascript" src="scripts/jquery.slicknav.js"></script> -->
+
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="templet.css" />
+
+  <title>Hello, World!</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="form">
+    <h1 align="center">Resume Maker</h1>
+    <form>
+      <section class="section">
+        <div class="container pad">
+          <p id="fullNameHead" class="required">
+            Enter Full Name
+          </p>
+          <input required type="text" id="fullNameInput">
+
+          <p id="houseNoHead" class="required">
+            House No.
+          </p>
+          <input required type="text" id="houseNoInput">
+
+          <p id="landmarkHead">
+            Landmark / Near by / Gali no.
+          </p>
+          <input type="text" id="landmarkInput">
+
+          <p id="areaHead" class="required">
+            Area / Locality
+          </p>
+          <input required type="text" id="areaInput">
+
+          <p id="stateCityHead" class="required">
+            State / City
+          </p>
+          <input required type="text" id="stateCityInput">
+
+          <p id="pincodeHead" class="required">
+            Pincode
+          </p>
+          <input required type="number" id="pincodeInput">
+
+          <p id="noHead" class="required">
+            Mobile No.
+          </p>
+          <input required type="number" id="noInput">
+
+          <p id="emailHead">
+            Email id.
+          </p>
+          <input type="email" id="emailInput">
+
+          <p id="profileHead">
+            What is your Profile ?
+          </p>
+          <input type="text" id="profileInput" placeholder="Web Designer,Computer Operator">
+
+          <img id="formImage" class="image">
+          <input type="file" accept="image/*" id="imgInput">
+
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h1 class="h1">Career Objective</h1>
+          <select class="careerObjective">
+            <option>Select Objective</option>
+            <option>Entry-level Position</option>
+            <option>Custom Objective</option>
+          </select>
+
+          <textarea id="careerText" placeholder=" required *"></textarea>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container" id="qualification">
+          <h1 class="h1">Qualification</h1>
+
+          <div class="container2">
+            <input required type="text" class="newQualificationInput" id="qualificationInput"
+              placeholder="Qualification*">
+
+            <input required type="text" class="newBoardInput" id="uniInput" placeholder="University / Board *">
+
+            <input required type="number" class="newYearInput" id="yearInput" placeholder="Year *">
+
+            <input required type="number" class="newPerInput" id="perInput" placeholder="Per % *">
+
+            <button class="remove" type="button">Remove</button>
+          </div>
+
+          <button class="add addQualification" type="button">Add more</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h1 class="h1" class="required">Other Qualification <!--<span class="side-btn remove">X</span>--></h1>
+          <div id="otherMain">
+
+            <div class="sidebtn">
+              <input required class="side" id="otherQualiInput" type="text" placeholder="Basic Computer,Telly *">
+              <span class="side-btn remove">X</span>
             </div>
-            <div id="qualificationDiv1">
+          </div>
+          <!-- <button class="remove" type="button">Remove</button> -->
+
+          <button class="add addPoint" type="button">Add point</button>
+        </div>
+      </section>
+
+      </section>
+      <section class="section">
+        <div id="workEx" class="container">
+          <h1 class="h1">Work Experience <!--<span class="side-btn remove">X</span>--></h1>
+          <div id="workMain">
+            <div class="sidebtn workEx">
+              <input required class="side" id="workExInput" type="text"
+                placeholder="Company Name and Years Or Fresher *">
+              <span class="side-btn remove">X</span>
+            </div>
+          </div>
+          <!-- <button class="remove" type="button">Remove</button> -->
+
+          <button class="add addPoint" type="button">Add point</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container pad">
+          <h1 class="h1">Personal Details</h1>
+          <br>
+          <p class="required">
+            Gender
+          </p>
+          <select id="genderInput">
+            <option>male</option>
+            <option>female</option>
+            <option>other</option>
+          </select>
+          <p class="required">
+            Father's Name
+          </p>
+          <input required type="text" id="father-name">
+
+          <p class="required">
+            Date of Birth
+          </p>
+          <input required type="date" id="dobInput">
+
+          <p class="required">
+            Language known
+          </p>
+          <input required type="text" id="languageInput" placeholder="Hindi & English">
+
+          <p class="required">
+            Nationality
+          </p>
+          <input required type="text" id="nationalityInput" placeholder="Indian">
+
+          <p class="required">
+            Marital status
+          </p>
+          <select id="maritalStatusInput">
+            <option>unmarid</option>
+            <option>marid</option>
+            <option>seprated</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="section">
+        <input type="submit" id="create" value="Create Resume">
+      </section>
+    </form>
+  </div>
+
+
+
+  <!-- Tamplate -->
+  <div id="templateContainer" style="position: absolute;top: 200px;left: -1000px;">
+    <div id="template">
+      <h1 >RESUME</h1>
+      <section id="section1">
+        <div id="header">
+          <div id="content">
+
+          </div>
+          <div>
+            <img id="templateImage" class="image">
+          </div>
+        </div>
+        <hr>
+      </section>
+
+
+      <section class="sec">
+        <h3>CAREER OBJECTIVE</h3>
+        <p id="objective"></p>
+      </section>
+
+
+      <section class="sec">
+        <h3>ACADEMIC QUALIFICATION</h3>
+        <div class="table" class="border">
+          <div>
+            <div class="border">
+              <h4>S.No</h4>
+            </div>
+            <div id="indexNoDiv1">
 
             </div>
           </div>
           <div>
-            <div>
+            <div class="border">
+              <h4>Qualification</h4>
+            </div>
+            <div id="qualificationDiv1">
+
+
+            </div>
+          </div>
+          <div>
+            <div class="border">
               <h4>University / Board</h4>
             </div>
             <div id="schoolDiv1">
@@ -237,7 +476,7 @@
             </div>
           </div>
           <div>
-            <div>
+            <div class="border">
               <h4>Year</h4>
             </div>
             <div id="passingYear1">
@@ -245,7 +484,7 @@
             </div>
           </div>
           <div>
-            <div>
+            <div class="border">
               <h4>Per %</h4>
             </div>
             <div id="per1">
@@ -259,14 +498,14 @@
       <section class="sec">
         <h3>OTHER QUALIFICATION</h3>
         <ul id="otherQualificationList">
-          <li>Basic Computer</li>
+
         </ul>
       </section>
 
       <section class="sec">
         <h3>WORK EXPERIENCE</h3>
         <ul id="workExpList">
-          <li>Fresher</li>
+
         </ul>
       </section>
 
@@ -290,10 +529,62 @@
   </div>
   <!-- Tamplate -->
 
-  <script src="jspdf.umd.min.js"></script>
-  <script src="html2canvas.js"></script>
-  <script src="script.js"></script>
-  <!-- <script src="scripts/functions.js"></script> -->
+  <script src="scripts/jspdf.umd.min.js"></script>
+  <script src="scripts/html2canvas.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/functions.js"></script>
+  <!-- <script src="scripts/template.js"></script> -->
 </body>
 
-</html>
+</html>￼Enter          <div>
+            <div class="border">
+              <h4>Qualification</h4>
+            </div>
+            <div id="qualificationDiv1">
+
+
+            </div>
+          </div>
+          <div>
+            <div class="border">
+              <h4>University / Board</h4>
+            </div>
+            <div id="schoolDiv1">
+
+            </div>
+          </div>
+          <div>
+            <div class="border">
+              <h4>Year</h4>
+            </div>
+            <div id="passingYear1">
+
+            </div>
+          </div>
+          <div>
+      <div class="border">
+              <h4>Per %</h4>
+            </div>
+            <div id="per1">
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="sec">
+        <h3>OTHER QUALIFICATION</h3>
+        <ul id="otherQualificationList">
+
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h3>WORK EXPERIENCE</h3>
+        <ul id="workExpList">
+
+        </ul>
+      </section>
+
+      <section class="sec">
