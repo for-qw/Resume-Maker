@@ -96,6 +96,11 @@ button {
     background-color: red;
     text-align: center;
     border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
 }
 
 #create {
@@ -146,7 +151,12 @@ form {
     color: red;
 }
 
-
+#workMain,
+#otherMain {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 
 /* Responsive */
@@ -166,4 +176,4 @@ form {
         -ms-transform: translateX(50%);
         -o-transform: translateX(50%);
     }
-}
+    }
